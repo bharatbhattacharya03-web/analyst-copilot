@@ -102,4 +102,27 @@
     <!-- CHAT PANEL -->
     <section class="panel" id="panel-chat">
       <h2>Ask Analyst Copilot</h2>
-      <p class="hint
+      <p class="hint">Career strategy, interview prep, tools to learn, how to phrase your resume — ask anything about the analyst job hunt.</p>
+
+      <div class="chat-window" id="chatWindow">
+        <div class="msg bot">
+          <p>Hey — I'm your analyst job search copilot. Ask me about interview prep, resume phrasing, SQL/Excel/Power BI skills, or how to stand out for BA, DA, or Risk Analyst roles.</p>
+        </div>
+      </div>
+
+      <form class="chat-input-row" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit" class="primary-btn">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Analyst Copilot — deploy your own instance, bring your own OpenAI key.</p>
+  </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
