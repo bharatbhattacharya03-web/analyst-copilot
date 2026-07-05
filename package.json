@@ -1,0 +1,20 @@
+{
+  "name": "analyst-copilot",
+  "version": "1.0.0",
+  "description": "AI chat assistant + resume match scorer + LinkedIn job search launcher for Business, Data, and Risk Analyst roles.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^2.0.0",
+    "pdf-parse": "^1.1.1"
+  }
+}
