@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Analyst Copilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◈</span>
+      <div class="brand-text">
+        <h1>Analyst Copilot</h1>
+        <p class="tagline">Business · Data · Risk — job search, resume fit, and career chat</p>
+      </div>
+    </div>
+    <div class="ticker" id="ticker"></div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="search" role="tab" aria-selected="true">Job Search</button>
+    <button class="tab" data-tab="resume" role="tab" aria-selected="false">Resume Score</button>
+    <button class="tab" data-tab="chat" role="tab" aria-selected="false">Chat</button>
+  </nav>
+
+  <main>
+
+    <!-- JOB SEARCH PANEL -->
+    <section class="panel active" id="panel-search">
+      <h2>Find roles on LinkedIn</h2>
+      <p class="hint">Pick a track, add a location or extra keywords, and open a live LinkedIn search — no scraping, just a direct, correct search link.</p>
+
+      <div class="role-grid" id="roleGrid">
+        <button class="role-card" data-role="Business Analyst" data-code="BA">
+          <span class="code">BA</span>
+          <span class="name">Business Analyst</span>
+        </button>
+        <button class="role-card" data-role="Data Analyst" data-code="DA">
+          <span class="code">DA</span>
+          <span class="name">Data Analyst</span>
+        </button>
+        <button class="role-card" data-role="Risk Analyst" data-code="RA">
+          <span class="code">RA</span>
+          <span class="name">Risk Analyst</span>
+        </button>
+      </div>
+
+      <div class="search-form">
+        <label>
+          Role / keywords
+          <input type="text" id="searchRole" placeholder="e.g. Business Analyst" />
+        </label>
+        <label>
+          Location <span class="optional">(optional)</span>
+          <input type="text" id="searchLocation" placeholder="e.g. Remote, London, Mumbai" />
+        </label>
+        <label class="checkbox-row">
+          <input type="checkbox" id="searchRemote" />
+          Remote only
+        </label>
+        <button class="primary-btn" id="openLinkedIn">Open LinkedIn search ↗</button>
+      </div>
+    </section>
+
+    <!-- RESUME SCORE PANEL -->
+    <section class="panel" id="panel-resume">
+      <h2>Score your resume</h2>
+      <p class="hint">Upload a text-based PDF resume. The AI reads it and scores fit against your target role (0–100), with strengths, gaps, and keywords to add.</p>
+
+      <div class="resume-form">
+        <label>
+          Target role
+          <select id="resumeRole">
+            <option>Business Analyst</option>
+            <option>Data Analyst</option>
+            <option>Risk Analyst</option>
+          </select>
+        </label>
+
+        <label class="file-drop" id="fileDrop">
+          <input type="file" id="resumeFile" accept="application/pdf" hidden />
+          <span id="fileLabel">Choose PDF resume — or drop it here</span>
+        </label>
+
+        <label>
+          Paste a job description <span class="optional">(optional, improves accuracy)</span>
+          <textarea id="jobContext" rows="4" placeholder="Paste the job posting text here..."></textarea>
+        </label>
+
+        <button class="primary-btn" id="scoreBtn">Score my resume</button>
+      </div>
+
+      <div id="scoreResult" class="score-result hidden"></div>
+    </section>
+
+    <!-- CHAT PANEL -->
+    <section class="panel" id="panel-chat">
+      <h2>Ask Analyst Copilot</h2>
+      <p class="hint
